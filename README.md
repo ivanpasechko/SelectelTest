@@ -55,38 +55,9 @@ CMD ["nginx", "-g", "daemon off;"]
 ## 6.
 
   - убедиться, что образ доступен Kubernetes
-  - Deployment:
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: my-app
-    spec:
-      replicas: 3
-      selector:
-        matchLabels:
-          app: my-app
-      template:
-        metadata:
-          labels:
-            app: my-app
-        spec:
-          containers:
-            - name: my-app
-              image: myrepo/my-app-image:1.0
-              ports:
-                - containerPort: 80
-              livenessProbe:
-                httpGet:
-                  path: /
-                  port: 80
-                initialDelaySeconds: 10
-                periodSeconds: 10
-              readinessProbe:
-                httpGet:
-                  path: /
-                  port: 80
-                initialDelaySeconds: 5
-                periodSeconds: 5
-  - Service:  
+  - см. Deployment.yaml [https://google.com]
+  - см. Service.yaml
+  - см. Access.yaml
+  - см. Scaling.yaml
 
 
