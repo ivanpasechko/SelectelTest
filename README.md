@@ -55,9 +55,27 @@ CMD ["nginx", "-g", "daemon off;"]
 ## 6.
 
   - убедиться, что образ доступен Kubernetes
-  - см. Deployment.yaml [https://google.com]
-  - см. Service.yaml
-  - см. Access.yaml
-  - см. Scaling.yaml
+  - [https://github.com/ivanpasechko/SelectelTest/blob/main/Deployment.yaml]
+  - [https://github.com/ivanpasechko/SelectelTest/blob/main/Service.yaml]
+  - [https://github.com/ivanpasechko/SelectelTest/blob/main/Access.yaml]
+  - [https://github.com/ivanpasechko/SelectelTest/blob/main/Scaling.yaml]
 
+## 7.
+
+  1) Проверка базового состояния
+     ping server
+     ssh server
+     uptime
+     df -h
+     free -m
+  2) Проверка Nginx
+     systemctl status nginx
+     ps aux | grep nginx
+     ss -lntp | grep :80
+  3) Анализ логов
+     tail -n 100 /var/log/nginx/error.log
+     journalctl -xe
+     dmesg | tail
+  4) Проверка внешних факторов (Firewall / iptables / сертификаты / Backend-сервисы / DDoS)
+  5) Если узел недоступен, пересоздаю VM / контейнер либо восстанавливаю IaC
 
